@@ -93,17 +93,17 @@ func testExample() throws {
 ```
 This function is where we test our `flattenArray` function with a few arbitrarily nested arrays of strings against their expected outputs.
 
-1. data1 contains the original input included in the prompt. 
+1. **data1** contains the original input included in the prompt. 
 	- Input: `[["one", "two", ["three"]], "four"]`
 	- Expected Output: `["one", "two", "three", "four"]`
-2. data2 contains a variation of the original input; the four main elements are nested in a different arbitrary manner.
+2. **data2** contains a variation of the original input; the four main elements are nested in a different arbitrary manner.
 	- Input: `["one", ["two", ["three"], []], [["four"]]]`
 	- Expected Output: `["one", "two", "three", "four"]`
-3. data3 contains an empty array to test the way it is handled (edge case)
+3. **data3** contains an empty array to test the way it is handled (edge case)
 	- Input: `[]`
 	- Expected Output: `[]`
 		- We expect an empty array to return an empty array when it is flattened
-4. data4 contains an arbitrarily nested array, with an element being an `Int` instead of `String`
+4. **data4** contains an arbitrarily nested array, with an element being an `Int` instead of `String`
 	- Input: `[[["one","two"], 3, ["three"]], "four"]`
 	- Expected Output: `["one", "two", "three", "four"]`
 		- We want the program to flatten nested arrays of `Strings` and therefore any other data types should be ignored
