@@ -29,12 +29,14 @@ class DavidLee_VynylTests: XCTestCase {
             // Use XCTAssert and related functions to verify your tests produce the correct results.
             let data1: [Any] = [["one", "two", ["three"]], "four"]
             let data2: [Any] = ["one", ["two", ["three"], []], [["four"]]]
-            let data3: [Any] = []
+            let data3: [Any] = [] // tests empty array edge case
+            let data4: [Any] = [[["one","two"], 3, ["three"]], "four"] // tests ignoring non-string element edge case
             
             
             XCTAssertEqual(arrayFlattener.flattenArray(data1), ["one", "two", "three", "four"])
             XCTAssertEqual(arrayFlattener.flattenArray(data2), ["one", "two", "three", "four"])
             XCTAssertEqual(arrayFlattener.flattenArray(data3), [])
+            XCTAssertEqual(arrayFlattener.flattenArray(data4), ["one", "two", "three", "four"])
             
         }
 
